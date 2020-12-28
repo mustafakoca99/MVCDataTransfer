@@ -1,0 +1,39 @@
+﻿@model MVC_DataTransfer.Models.ogrenci
+
+@{
+    ViewBag.Title = DateTime.Now.ToShortDateString()+" | Mustafa Koca";
+}
+
+<h2>Mustafa Koca</h2>
+
+<marquee direction="down" scrollamount="1">Sayın @Model.ogrenciadi Hoşgeldiniz!</marquee>
+
+<br />
+
+@{ 
+    DateTime tarih = (DateTime)Model.sunucutarihi;
+}
+
+<p>NOTUNUZ: @Model.ortalama</p>
+<p><b>Oturum açılma tarihi: @tarih.ToShortTimeString()</b></p>
+
+<ul>
+    @if (Model.sinifi==1)
+    {
+        <li>Algoritma ve temel programlama</li>
+        <li>edebiyat</li>
+        <li>tarih</li>
+    }
+    else if (Model.sinifi==2)
+    {
+        <li>ntp</li>
+        <li>istatistik</li>
+        <li>web tasarım</li>
+    }
+    else if (Model.sinifi==3)
+    {
+        <li>görsel programlama</li>
+        <li>mikroişlemci</li>
+        <li>robotik</li>
+    }
+</ul>
